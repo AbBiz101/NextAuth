@@ -1,5 +1,5 @@
 import { dbConnection } from '../../../utils/db';
-import hashPassword from '../../../utils/auth';
+import {hashPassword} from '../../../utils/auth';
 
 export default async function handler(req, res) {
 	if (req.method === 'POST') {
@@ -19,10 +19,10 @@ export default async function handler(req, res) {
 				.insertOne({ email: email, password: hashedPassword });
 
 			res.status(201).json({ message: 'user created' });
-			db.close();
+			client.close();
 		} else {
 			res.status(422).json({ message: 'user exists' });
-			db.close();
+			client.close();
 		}
 	}
 }
