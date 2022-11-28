@@ -22,11 +22,23 @@ export default function UserProfile() {
 	// 	return <h2 className={classes.profile}>Loading...</h2>;
 	// }
 
+	async function changePasswordHandler(passwordData) {
+		console.log(passwordData);
+		const req = await fetch('/api/user/change-password', {
+			method: 'PATCH',
+			body: JSON.stringify(passwordData),
+			headers: {
+				'Content-Type': 'application/json',
+			},
+		});
+		const data = await req.json();
+		console.log(data);
+	}
+
 	return (
 		<section className={classes.profile}>
 			<h1>Your User Profile</h1>
-			<ProfileForm />
+			<ProfileForm onChangePassword={changePasswordHandler} />
 		</section>
 	);
 }
-
