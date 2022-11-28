@@ -2,7 +2,7 @@ import Link from 'next/link';
 import { useSession, signOut } from 'next-auth/client';
 import classes from './main-navigation.module.css';
 
-function MainNavigation() {
+export default function MainNavigation() {
 	const [session, loading] = useSession();
 
 	function logOutHandler() {
@@ -39,4 +39,3 @@ function MainNavigation() {
 	);
 }
 
-export default MainNavigation;
