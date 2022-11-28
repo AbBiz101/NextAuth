@@ -6,6 +6,11 @@ export default async function userHandler(req, res) {
 	const session = await getSession({ req: req });
 	if (req.method !== 'PATCH') return;
 
+	if (!session) {
+		res.status(404).json({ message: 'User not authenticated' });
+		return;
+	}
+
 	const userEmail = session.user.email;
 	const oldPassword = req.body.oldPassword;
 	const newPassword = req.body.newPassword;
@@ -23,7 +28,7 @@ export default async function userHandler(req, res) {
 
 	const currentPassword = user.password;
 	const passwordEqual = await verifyPassword(currentPassword, oldPassword);
-
+	console.log(passwordEqual);
 	if (!passwordEqual) {
 		res.status(403).json({ message: 'wrong password' });
 		client.close();
