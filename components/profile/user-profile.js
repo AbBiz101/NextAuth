@@ -1,7 +1,7 @@
 import ProfileForm from './profile-form';
 import classes from './user-profile.module.css';
 
-function UserProfile() {
+export default function UserProfile() {
 	// import { getSession } from 'next-auth/client';
 	// import { useState, useEffect } from 'react';
 	// Redirect away if NOT auth
@@ -30,4 +30,3 @@ function UserProfile() {
 	);
 }
 
-export default UserProfile;
