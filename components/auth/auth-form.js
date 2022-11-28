@@ -4,7 +4,7 @@ import createUser from '../../utils/api';
 import { signIn } from 'next-auth/client';
 import { useRouter } from 'next/router';
 
-function AuthForm() {
+export default function AuthForm() {
 	const [isLogin, setIsLogin] = useState(true);
 	const router = useRouter();
 	const userEmailRef = useRef();
@@ -68,4 +68,4 @@ function AuthForm() {
 	);
 }
 
-export default AuthForm;
+
