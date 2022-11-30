@@ -1,8 +1,8 @@
+import { useRouter } from 'next/router';
 import { useState, useRef } from 'react';
-import classes from './auth-form.module.css';
 import createUser from '../../utils/api';
 import { signIn } from 'next-auth/client';
-import { useRouter } from 'next/router';
+import classes from './auth-form.module.css';
 
 export default function AuthForm() {
 	const [isLogin, setIsLogin] = useState(true);
