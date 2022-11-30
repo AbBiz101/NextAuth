@@ -1,5 +1,5 @@
-import classes from './profile-form.module.css';
 import { useRef } from 'react';
+import classes from './profile-form.module.css';
 
 export default function ProfileForm(props) {
 	const newPasswordRef = useRef();
