@@ -1,7 +1,7 @@
-import { useEffect, useState } from 'react';
-import AuthForm from '../components/auth/auth-form';
-import { getSession } from 'next-auth/client';
 import { useRouter } from 'next/router';
+import { useEffect, useState } from 'react';
+import { getSession } from 'next-auth/client';
+import AuthForm from '../components/auth/auth-form';
 
 export default function AuthPage() {
 	const router = useRouter();
